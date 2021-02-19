@@ -1,5 +1,5 @@
 /// Arabic alphabets based on https://en.wikipedia.org/wiki/Arabic_alphabet
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Copy, Clone)]
 pub enum Alphabet {
     Alif,
     Ba,
@@ -34,7 +34,7 @@ pub enum Alphabet {
 }
 
 /// Arabic main diacritics https://en.wikipedia.org/wiki/Arabic_diacritics
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Copy, Clone)]
 pub enum Diacritic {
     Fatha,
     Kasra,
@@ -42,8 +42,6 @@ pub enum Diacritic {
     Sukun,
     None,
 }
-
-pub type Base = Vec<(Alphabet, Diacritic)>;
 
 pub fn char_to_alphabet(c: char) -> Alphabet {
     match c {
